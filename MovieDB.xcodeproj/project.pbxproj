@@ -75,6 +75,7 @@
 		D53A230229AEE0AC00DD4E61 = {
 			isa = PBXGroup;
 			children = (
+				D587E22329AEE514000FBE1C /* README.md */,
 				D53A230D29AEE0AC00DD4E61 /* MovieDB */,
 				D53A231E29AEE0AD00DD4E61 /* MovieDBTests */,
 				D53A232829AEE0AD00DD4E61 /* MovieDBUITests */,
@@ -99,7 +100,6 @@
 				D53A231029AEE0AC00DD4E61 /* ContentView.swift */,
 				D53A231229AEE0AD00DD4E61 /* Assets.xcassets */,
 				D53A231429AEE0AD00DD4E61 /* Preview Content */,
-				D587E22329AEE514000FBE1C /* README.md */,
 			);
 			path = MovieDB;
 			sourceTree = "<group>";
