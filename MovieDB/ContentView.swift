@@ -8,15 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        @StateObject var movieViewModel = MovieViewModel()
+        
+        var body: some View {
+            VStack {
+                switch movieViewModel.state {
+                case .idle:
+                    Text("Networking")
+                case .loading:
+                    ProgressView()
+                case let .loaded(movieResponse):
+                    Text("Loaded succesfully")
+                    VStack {
+                        ForEach(movieResponse.results, id: \.self) { movie in
+                            Text("Movie: " + (movie.title ?? "Title unavailable"))
+                        }
+                    }
+                case let .failed(error):
+                    Text(error.localizedDescription)
+                }
+            }
+            .onAppear {
+                movieViewModel.loadItems()
+            }
         }
-        .padding()
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
