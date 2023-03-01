@@ -44,6 +44,7 @@
 		D53A232529AEE0AD00DD4E61 /* MovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53A232929AEE0AD00DD4E61 /* MovieDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBUITests.swift; sourceTree = "<group>"; };
 		D53A232B29AEE0AD00DD4E61 /* MovieDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D587E22329AEE514000FBE1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 				D53A231029AEE0AC00DD4E61 /* ContentView.swift */,
 				D53A231229AEE0AD00DD4E61 /* Assets.xcassets */,
 				D53A231429AEE0AD00DD4E61 /* Preview Content */,
+				D587E22329AEE514000FBE1C /* README.md */,
 			);
 			path = MovieDB;
 			sourceTree = "<group>";
