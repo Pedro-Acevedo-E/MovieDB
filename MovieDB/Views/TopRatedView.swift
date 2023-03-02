@@ -18,9 +18,7 @@ struct TopRatedView: View {
             case .loading:
                 ProgressView()
             case let .loaded(movieResponse):
-                ForEach(movieResponse.results, id: \.self) { movie in
-                    Text("Movie: " + (movie.title ?? "Title unavailable"))
-                }
+                MovieListView(item: movieResponse)
             case let .failed(error):
                 Text(error.localizedDescription)
             }

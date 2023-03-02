@@ -36,7 +36,7 @@ public final class MovieViewModel: ObservableObject {
     
     func loadItemsPopular() {
         state = .loading
-        if let url = API.createURLRequestTopRated() {
+        if let url = API.createURLRequestPopular() {
         cancellable = session
             .dataTaskPublisher(for: url)
             .map(\.data)

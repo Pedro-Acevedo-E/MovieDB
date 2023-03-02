@@ -26,7 +26,7 @@ struct ContentView: View {
                     case "Popular":
                         PopularView(movieViewModel: movieViewModel)
                     case "Top Rated":
-                        PopularView(movieViewModel: movieViewModel)
+                        TopRatedView(movieViewModel: movieViewModel)
                     case "On Tv":
                         Text("On Tv selected")
                     case "Airing Today":
@@ -35,12 +35,7 @@ struct ContentView: View {
                         Text("Invalid selection")
                     }
                 }
-            }
-            .navigationTitle("Tv Shows")
-            .onAppear {
-                movieViewModel.loadItemsPopular()
-                movieViewModel.loadItemsTopRated()
-            }
+            }.navigationTitle("Popular")
         }
     }
 }
