@@ -8,30 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
-        @StateObject var movieViewModel = MovieViewModel()
-        
-        var body: some View {
+    @StateObject var movieViewModel = MovieViewModel()
+    let pickerSelections = ["Popular", "Top Rated", "On Tv", "Airing Today"]
+    @State private var pickerSelection = "Popular"
+    
+    var body: some View {
+        NavigationView {
             VStack {
-                switch movieViewModel.state {
-                case .idle:
-                    Text("Networking")
-                case .loading:
-                    ProgressView()
-                case let .loaded(movieResponse):
-                    Text("Loaded succesfully")
-                    VStack {
-                        ForEach(movieResponse.results, id: \.self) { movie in
-                            Text("Movie: " + (movie.title ?? "Title unavailable"))
-                        }
+                Picker("Category", selection: $pickerSelection){
+                    ForEach(pickerSelections, id: \.self) {
+                        Text($0)
                     }
-                case let .failed(error):
-                    Text(error.localizedDescription)
+                }
+                .pickerStyle(.segmented)
+                ScrollView {
+                    switch pickerSelection {
+                    case "Popular":
+                        PopularView(movieViewModel: movieViewModel)
+                    case "Top Rated":
+                        PopularView(movieViewModel: movieViewModel)
+                    case "On Tv":
+                        Text("On Tv selected")
+                    case "Airing Today":
+                        Text("Airing today selected")
+                    default:
+                        Text("Invalid selection")
+                    }
                 }
             }
+            .navigationTitle("Tv Shows")
             .onAppear {
-                movieViewModel.loadItems()
+                movieViewModel.loadItemsPopular()
+                movieViewModel.loadItemsTopRated()
             }
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

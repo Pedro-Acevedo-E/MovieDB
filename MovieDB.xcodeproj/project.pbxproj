@@ -18,6 +18,8 @@
 		D58D4CB929B00F160075F253 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D4CB829B00F160075F253 /* MovieResult.swift */; };
 		D58D4CBB29B011840075F253 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D4CBA29B011840075F253 /* API.swift */; };
 		D58D4CBD29B015EA0075F253 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D4CBC29B015EA0075F253 /* MovieViewModel.swift */; };
+		D5C896D529B13D510068AA4C /* PopularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C896D429B13D510068AA4C /* PopularView.swift */; };
+		D5C896D729B13EDA0068AA4C /* TopRatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C896D629B13EDA0068AA4C /* TopRatedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D58D4CB829B00F160075F253 /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
 		D58D4CBA29B011840075F253 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D58D4CBC29B015EA0075F253 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		D5C896D429B13D510068AA4C /* PopularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularView.swift; sourceTree = "<group>"; };
+		D5C896D629B13EDA0068AA4C /* TopRatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 		D58D4CB429B00DDD0075F253 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5C896D429B13D510068AA4C /* PopularView.swift */,
+				D5C896D629B13EDA0068AA4C /* TopRatedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,8 +312,10 @@
 				D58D4CB729B00E750075F253 /* MovieResponse.swift in Sources */,
 				D53A231129AEE0AC00DD4E61 /* ContentView.swift in Sources */,
 				D58D4CB929B00F160075F253 /* MovieResult.swift in Sources */,
+				D5C896D729B13EDA0068AA4C /* TopRatedView.swift in Sources */,
 				D53A230F29AEE0AC00DD4E61 /* MovieDBApp.swift in Sources */,
 				D58D4CBB29B011840075F253 /* API.swift in Sources */,
+				D5C896D529B13D510068AA4C /* PopularView.swift in Sources */,
 				D58D4CBD29B015EA0075F253 /* MovieViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
