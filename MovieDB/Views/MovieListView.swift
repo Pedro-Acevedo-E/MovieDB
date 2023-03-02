@@ -12,6 +12,7 @@ struct MovieListView: View {
     let adaptiveColumns = [
         GridItem(.adaptive(minimum: 180, maximum: 180))
     ]
+    @Binding var selectedMovie: MovieResult?
     
     var body: some View {
         LazyVGrid(columns: adaptiveColumns, spacing: 10) {
@@ -20,21 +21,7 @@ struct MovieListView: View {
                     ZStack {
                         Color(UIColor(named: "CardColor") ?? .gray)
                         VStack(alignment: .leading, spacing: 5) {
-                            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + posterImage)) { phase in
-                                switch phase {
-                                case .empty:
-                                    ProgressView()
-                                        .frame(height: 277)
-                                case .success(let image):
-                                    image.resizable()
-                                        .frame(height: 277)
-                                case .failure:
-                                    ProgressView()
-                                        .frame(height: 277)
-                                @unknown default:
-                                    Image(systemName: "questionmark")
-                                }
-                            }
+                            PosterImageView(posterImage: posterImage)
                             Text(i.title ?? "Title unavailable")
                                 .font(.title2)
                                 .bold()
@@ -57,8 +44,12 @@ struct MovieListView: View {
                     }
                     .frame(height: 500)
                     .cornerRadius(15)
+                    .onTapGesture {
+                        selectedMovie = i
+                    }
                 }
             }
         }
+        
     }
 }

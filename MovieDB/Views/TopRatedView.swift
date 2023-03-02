@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TopRatedView: View {
     @ObservedObject var movieViewModel: MovieViewModel
+    @Binding var selectedMovie: MovieResult?
     
     var body: some View {
         VStack {
@@ -18,7 +19,7 @@ struct TopRatedView: View {
             case .loading:
                 ProgressView()
             case let .loaded(movieResponse):
-                MovieListView(item: movieResponse)
+                MovieListView(item: movieResponse, selectedMovie: $selectedMovie)
             case let .failed(error):
                 Text(error.localizedDescription)
             }
