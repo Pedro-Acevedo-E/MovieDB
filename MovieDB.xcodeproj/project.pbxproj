@@ -177,10 +177,10 @@
 				D5C896D429B13D510068AA4C /* MovieView.swift */,
 				D5C896D629B13EDA0068AA4C /* TvView.swift */,
 				D5C896D829B151200068AA4C /* MovieListView.swift */,
-				D5C896DA29B156500068AA4C /* PosterImageView.swift */,
-				D5C896DC29B156C30068AA4C /* DetailsView.swift */,
-				D5C896DE29B164B40068AA4C /* MovieGenreView.swift */,
 				D5C896E629B16F6B0068AA4C /* TvListView.swift */,
+				D5C896DC29B156C30068AA4C /* DetailsView.swift */,
+				D5C896DA29B156500068AA4C /* PosterImageView.swift */,
+				D5C896DE29B164B40068AA4C /* MovieGenreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
