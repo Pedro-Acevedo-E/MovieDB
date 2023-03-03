@@ -37,10 +37,12 @@ struct LoginView: View {
                         .font(.title2)
                 }
                 .onTapGesture {
-                    self.isLoading = true
-                    Task {
-                        await loginViewModel.login()
-                        self.isLoading = false
+                    if isLoading == false {
+                        self.isLoading = true
+                        Task {
+                            await loginViewModel.login()
+                            self.isLoading = false
+                        }
                     }
                 }
                 Text(loginViewModel.statusMessage)
