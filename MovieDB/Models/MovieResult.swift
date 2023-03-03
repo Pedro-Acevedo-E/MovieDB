@@ -10,8 +10,10 @@ import Foundation
 public struct MovieResult: Codable, Hashable {
     let adult: Bool?
     let backdrop_path: String?
+    let first_air_date: String?
     let genre_ids: [Int]
     let id: Int?
+    let name: String?
     let original_language: String?
     let original_title: String?
     let overview: String?

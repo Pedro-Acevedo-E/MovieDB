@@ -16,8 +16,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if selectedMovie != nil {
-                MovieDetailsView(selectedMovie: $selectedMovie)
-                    .navigationTitle(selectedMovie?.title ?? "")
+                if let title = selectedMovie?.title {
+                    DetailsView(selectedMovie: $selectedMovie)
+                        .navigationTitle(title)
+                } else if let name = selectedMovie?.name {
+                    DetailsView(selectedMovie: $selectedMovie)
+                        .navigationTitle(name)
+                } else {
+                    DetailsView(selectedMovie: $selectedMovie)
+                }
             } else {
                 VStack {
                     Picker("Category", selection: $pickerSelection){
@@ -29,17 +36,29 @@ struct ContentView: View {
                     ScrollView {
                         switch pickerSelection {
                         case "Popular":
-                            PopularView(movieViewModel: movieViewModel, selectedMovie: $selectedMovie)
+                            MovieView(movieViewModel: movieViewModel, selectedMovie: $selectedMovie)
                                 .navigationTitle("Popular")
+                                .onAppear {
+                                    movieViewModel.loadItemsPopular()
+                                }
                         case "Top Rated":
-                            TopRatedView(movieViewModel: movieViewModel, selectedMovie: $selectedMovie)
-                                .navigationTitle("Top Rated")
+                            MovieView(movieViewModel: movieViewModel, selectedMovie: $selectedMovie)
+                                .navigationTitle("Top rated")
+                                .onAppear {
+                                    movieViewModel.loadItemsTopRated()
+                                }
                         case "On Tv":
-                            Text("On Tv selected")
-                                .navigationTitle("On tv")
+                            TvView(movieViewModel: movieViewModel, selectedMovie: $selectedMovie)
+                                .navigationTitle("On Tv")
+                                .onAppear {
+                                    movieViewModel.loadItemsOnTv()
+                                }
                         case "Airing Today":
-                            Text("Airing today selected")
+                            TvView(movieViewModel: movieViewModel, selectedMovie: $selectedMovie)
                                 .navigationTitle("Airing Today")
+                                .onAppear {
+                                    movieViewModel.loadItemsAiringToday()
+                                }
                         default:
                             Text("Invalid selection")
                                 .navigationTitle("Error")

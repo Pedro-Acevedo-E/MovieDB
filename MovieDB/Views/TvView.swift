@@ -1,5 +1,5 @@
 //
-//  PopularView.swift
+//  TopRatedView.swift
 //  MovieDB
 //
 //  Created by Pedro Acevedo on 02/03/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PopularView: View {
+struct TvView: View {
     @ObservedObject var movieViewModel: MovieViewModel
     @Binding var selectedMovie: MovieResult?
     
@@ -19,15 +19,13 @@ struct PopularView: View {
             case .loading:
                 ProgressView()
             case let .loaded(movieResponse):
-                MovieListView(item: movieResponse, selectedMovie: $selectedMovie)
+                TvListView(item: movieResponse, selectedMovie: $selectedMovie)
             case let .failed(error):
                 Text(error.localizedDescription)
             }
         }
         .onAppear {
-            movieViewModel.loadItemsPopular()
+            movieViewModel.loadItemsTopRated()
         }
     }
 }
-
-

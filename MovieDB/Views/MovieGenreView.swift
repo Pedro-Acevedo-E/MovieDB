@@ -11,6 +11,8 @@ struct MovieGenreView: View {
     let item: Int
     var body: some View {
         switch item {
+        case 10759:
+            Text("Action & Adventure")
         case 28:
             Text("Action")
         case 12:
@@ -24,9 +26,25 @@ struct MovieGenreView: View {
         case 99:
             Text("Documentary")
         case 18:
-            Text("Draama")
+            Text("Drama")
         case 10751:
             Text("Family")
+        case 10762:
+            Text("Kids")
+        case 9648:
+            Text("Mystery")
+        case 10763:
+            Text("News")
+        case 10764:
+            Text("Reality")
+        case 10765:
+            Text("Scy-Fi & Fantasy")
+        case 10766:
+            Text("Soap")
+        case 10767:
+            Text("Talk")
+        case 10768:
+            Text("War & Politics")
         case 14:
             Text("Fantasy")
         case 36:
@@ -35,8 +53,6 @@ struct MovieGenreView: View {
             Text("Horror")
         case 10402:
             Text("Music")
-        case 9648:
-            Text("Mystery")
         case 10749:
             Text("Romance")
         case 878:

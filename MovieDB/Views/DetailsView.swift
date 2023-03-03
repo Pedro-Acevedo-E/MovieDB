@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MovieDetailsView: View {
+struct DetailsView: View {
     @Binding var selectedMovie: MovieResult?
     
     var body: some View {
@@ -23,8 +23,10 @@ struct MovieDetailsView: View {
                     .padding()
                 if let title = selectedMovie?.title {
                     Text(title)
+                } else if let title = selectedMovie?.name {
+                    Text(title)
                 } else {
-                    Text("Title unavailable")
+                    Text("Unavailable")
                 }
                 
                 Text("Synopsis")
@@ -44,7 +46,13 @@ struct MovieDetailsView: View {
                     .padding(.bottom)
                 
                 HStack {
-                    Text("Release Date: \(selectedMovie?.release_date ?? "Unavailable")")
+                    if let release = selectedMovie?.release_date {
+                        Text("Release Date: " + release)
+                    } else if let airDate = selectedMovie?.first_air_date {
+                        Text("Air Date: " + airDate)
+                    } else {
+                        Text("Unavailable")
+                    }
                     Spacer()
                     Image(systemName: "star.fill")
                         .foregroundColor(.green)

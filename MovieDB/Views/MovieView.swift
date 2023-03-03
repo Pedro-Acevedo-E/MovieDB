@@ -1,5 +1,5 @@
 //
-//  TopRatedView.swift
+//  PopularView.swift
 //  MovieDB
 //
 //  Created by Pedro Acevedo on 02/03/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopRatedView: View {
+struct MovieView: View {
     @ObservedObject var movieViewModel: MovieViewModel
     @Binding var selectedMovie: MovieResult?
     
@@ -25,7 +25,9 @@ struct TopRatedView: View {
             }
         }
         .onAppear {
-            movieViewModel.loadItemsTopRated()
+            movieViewModel.loadItemsPopular()
         }
     }
 }
+
+
